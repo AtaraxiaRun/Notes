@@ -1,0 +1,134 @@
+https://www.appinn.com/typora-4-plugin/ 通过注入 js 代码，为 Typora 额外增加 4 个功能 还可以隐藏卡顿的文字，太牛了，还有多关键字搜索
+
+https://www.appinn.com/documents-history-version/  查看每个文件的历史文件，太牛了
+
+#宝塔面板 139.159.185.107
+ 外网面板地址: https://139.159.185.107:29021/7dfe5b84
+ 内网面板地址: https://192.168.0.106:29021/7dfe5b84
+ username: r6ibtp3z
+ password: 9eac483c
+
+
+
+#ChatGPT
+ 公司的账号（业务账号）：
+  sun@jiebian.tk
+  1ylsSvV47yWN7jFp
+  
+  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
+  
+  
+  120美元（姐账号）：
+  randyhillmr.0.5199.6@gmail.com	24438764 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
+  
+  2.Google Clound秘钥:AIzaSyDu6BSxviS1emdC3GSgKLCTp1LvAc2G_pU
+
+
+//虚拟机linux账户与密码（一样）
+root root
+
+
+//滴答清单快捷键
+ctrl +alt A  按两次消失
+
+
+//Typora快速加粗
+ctrl+b 快速加粗（翅膀那个位置）
+先** 文字 ** 结束 也可以加粗
+
+//拉取易仓数据时判断数据是否为空的技巧
+只要用程序筛选出目标值的范围内容，然后再针对性请求这批
+数据，如果更新时间没有变的数据，那就是删除了的SKU
+
+//大数据量表：1800w
+bailun_bltpro.t_bi_walmart_listing
+bailun_bltpro.t_adjust_price_task_run_detail 裕文的大表
+//首页面导出的1.5分钟超时时间
+1.5分钟 代表的是：  90秒
+
+
+//Dockerfile
+RUN npm run build:prod  --正式环境
+RUN npm run build:stage --测试环境
+
+域名：https://staging.shengweiinc.com
+更新测试环境：
+- 前端
+    - 前端项目Sunway.Admin.Web代码签入master分支
+    - 切换分支到staging，然后将master分支合并到staging分支
+    - 打包构建项目：sunway-admin-web-staging
+    - 更新容器服务：sunway-admin-web-staging
+
+- 后端
+    - 后端项目sunway.skums代码签入master分支
+    - 打包构建项目：sw-skums-server-staging
+    - 更新容器服务：sunway-skums-service-staging
+	
+1：Sunway.Skums.Service已经新增【Staging】分支
+2：【Staging】分支对应的镜像名为：【sw-skums-server-staging】
+3：更新容器地址为:【sunway】下的【sunway-skums-service-staging】
+
+
+//重量	
+产品重量（净重）  t_product_property.productWeight   ps_weight   ProductNetWeight 
+ 
+包装重量（毛重）  t_product_property.packageWeight   ps_packing_weight  ProductWeight
+ 
+ 
+//轻流无代码系统开发平台
+https://qingflow.com/?utm_source=baidu-knowledge
+
+--win10设置多个桌面 快捷键 
+win+tag 按键
+
+
+
+Github Copilot AI 辅助编程（在vscode扩展程序里面搜索 GitHub Copilot 就可以使用：）
+1.根据英文注释生成代码（支持中文）
+2.自动补完重复代码
+正在等待官方的通知
+ 
+剔除框架赋值到VUE页面首字母变成小写的设置
+
+多看看公司的其他系统，上去点两下系统
+自己创办软件培训公司（激动的，兴奋的，ACE老师可以加入吗，帮忙）
+
+
+头脑特工队 里面的正，负两个人的名字
+net core预热API
+
+
+开源社区怎么玩呢（现在去看很多软件的介绍看不太懂，大家是怎么在开源社区上学习的）
+
+ 【开发熊掌记桌面端】熊掌记有API接口,有，看链接：https://bear.app/cn/faq/X-callback-url%20Scheme%20Documentation/
+ 
+ 
+打包所有环境安装的工具到百度网盘
+
+
+/**************系统账号*******************/
+//腾讯云子账号
+主ID=100018054954
+wangrui
+_.kR:4ZCrX6cs_e
+
+--盛为社区密码
+账户：王锐
+密码：swwrnow123
+
+--盛为系统账户/密码
+王锐 123456
+
+--Git账户密码
+1298775182@qq.com   wr1436062434
+
+//新的腾讯code,coding账户与密码
+1298775182@qq.com  ~WR13725452029
+
+//oracle账户
+1298775182@qq.com
+~Wr15920392684
+
+//本地mysql账户
+root
+123456

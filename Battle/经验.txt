@@ -1,0 +1,263 @@
+//编写接口
+方法描述：根据中文名称获取walmart属性映射名称
+请求路径：ListerColorMapping/GetMappingNames  
+请求类型：HttpGet
+入参格式：IEnumerable<string> nameCns  字符串集合
+返回对象：List<ListerColorMappingDetailMappingNameDto>
+返回格式：{ mappingName,nameCn}
+请求参数： ['军绿','黑色2','米色']
+返回值：
+
+{
+  "result": [
+    {
+      "mappingName": "Green",
+      "nameCn": "军绿"
+    },
+    {
+      "mappingName": "Beige",
+      "nameCn": "米色"
+    }
+  ],
+  "statusCode": 200,
+  "message": null
+}
+
+//正式库Redis链接地址
+  "redis": {
+    "HostName": "192.168.255.235",
+    "Port": "6379",
+    "Password": "",
+    "Defaultdatabase": 2
+  },
+
+//返回对象
+OperationOutput
+
+//typepo卡顿
+1.不用微软原生的输入法输入，使用搜狗输入法进行输入试试
+2. 开源代码模式
+
+//调试的需求
+
+//接口的权限请求
+    public enum LoginMode
+    {
+        Enforce = 0,
+        Ignore = 1,   --忽略这个接口的权限验证
+        MockAdmin = 2,
+        PublicEnforce = 3
+    }
+
+
+//沃尔玛请求的路径：
+--公网路径
+https://admin.shengweiinc.com/WalmartApi/Common/GetWalmartCategorys
+--内部路径
+http://192.168.255.133:8000/WalmartApi/Common/GetWalmartCategorys
+
+
+
+//天翼云
+1298775182@qq.com
+~WR1436062434
+
+//正式的网关服务
+http://192.168.254.42:8500 --正式的
+
+//为什么要学习Docker
+公司后面发展壮大，自建机房 肯定是要自己搞的，自己会搞，不求人
+
+//公司现有的项目
+项目就是用的腾讯云一整套部署体系，集群+k8s+docker
+
+//观看开源经验
+1.开源社区就像分类不同的工具，有前端，后端，移动开发，桌面开发，前沿技术，人工智能模块
+
+//编码的含义： 7位，15位
+商品编码/仓库SKU：指的一个款的商品，即绿色的 RBC0002
+SKU/仓库编码：指的一款商品里面的不同颜色的每个个体。RBC000200001     
+平台编码/平台SKU/刊登SKU：使用SKU上架到平台的编码，是用仓库SKU+#+账号简称+随机2-3位数字  RBC0002#WAOkk-03
+SPU集合：商品的集合，比如苹果13是一个商品，红色的外壳，白色的外壳，黑色的外壳，就是SPU集合
+listing :listing就是我们说的链接，一条listing有多个SKU
+表的命名：1.有关销售平台的表，以listing结尾的，都是在售表，lister结尾都是范本表  2.t_bi_平台_业务
+
+
+//其他编码
+仓库编码 proCode  --界面展示的
+平台编码 skuCode
+
+
+//控制器的返回值
+控制器注意下，只有列表才返回VueResult这个结果，其他就正常发货List<FyndiqListerDto>就行了（搞明白是什么意思）  --只有查询列表才需要返回VueResult这个结果（isSecceed，messsage,result(object)）,其他的查询直接return实体类，或者List<实体类>的集合
+
+//设置最后一列固定：fixed="right"  ，前面一列如果不设置宽度可以动态改变宽度
+<el-table-column label="操作" align="center" width="180" fixed="right" />
+	
+//appsettings配置解析
+Development  开发环境
+Production 正式环境
+
+//引用图片 
+ RBA0773 这个有图片
+
+
+//&&符号的含义
+当 && 连接两个值，第一个值为true,则返回第二个值；若第一个值为false,则直接返回一个值；
+
+Undefined、Null、 String、NaN、false、0 转换为布尔值的时候，都为false；其他所有值都为true;
+//||符号的含义
+与|| ,碰到真，就返回；如果两者都为假，就返回后面的一个假【
+
+//刊登模板的
+
+//转换数据库实体到Dto实体的方法1
+_fruugoOrderRepository.Query().OrderByDescending(p => p.Id).Select(p => new FruugoOrderListDto
+{
+    Id = p.Id,
+    ShopId = p.ShopId
+	
+}
+ 方法2：通过AutoMap对象的双向映射 Map，     [AutoMap(typeof(FyndiqLister))]
+  var dtoList= Mapper.Map<List<FyndiqListerDto>>(query);
+
+
+//获取accountId与accountName
+UI:
+<el-form-item label="店铺" prop="accountId">
+    <PlatformShopSelect ref="shop" v-model="formData.accountId" platform="fyndiq" style="width:50%" />
+ </el-form-item>
+逻辑：
+const _shop = this.$refs.shop.find(this.formData.accountId)
+if (_shop) {
+    this.formData.accountName = _shop.account
+}
+	
+
+//AutoMap对象的双向映射 Map     [AutoMap(typeof(FyndiqLister))]
+var lister = Mapper.Map<WalmartLister>(input);  //如果转换出现问题会有具体的属性提示，比如CreatorOrganizeId， An exception occurred while reading a database value for property 'FyndiqLister.CreatorOrganizeId'. The expected type was 'System.String' but the actual value was of type 'System.Int64'.
+
+--弹出弹窗
+this.$message.warning('Fyndiq平台限制只允许选择两个属性')
+
+--设置 <el-input>的宽度
+ style="width:30%;"
+
+--form表单的结构
+<el-form-item></el-form-item>
+ 
+  
+
+
+--快速执行Net程序
+dotnet run
+
+--Mysql字符占字数
+在mysql中，如果是latin1字符集下，一个中文汉字占2个字节数；如果是utf8字符集下，一个中文汉字占3个字节数；如果是gbk字符集下，一个中文汉字占2个字节数。
+show variables like '%character%';  --查看数据库字符集 （目前都是utf8,一个中文汉字占3个字节数）
+show variables like 'collation%';  --查看服务器字符集（目前都是utf8,一个中文汉字占3个字节数）
+
+
+--Navicat 常用的数据类型
+int
+decimal
+longtext
+datetime
+longtext
+Navicat
+
+--Navicat添加注释
+使用：Ctrl+ /
+
+
+--共享盘符信息
+访问路径：\\192.168.11.246\sunway
+用户名：it111
+密码：it@#654321
+
+--数据库密码
+server=gz-cdb-ezvn7csl.sql.tencentcdb.com;Port=58892;Database=bailun_bltpro;Uid=root;Pwd=shengye2021
+host=gz-cdb-ezvn7csl.sql.tencentcdb.com;port=58892;database=bailun_bltpro;uid=root;pwd=shengye2021;Convert Zero Datetime=True;
+host=localhost;port=3306;database=mydb;uid=root;pwd=123;Convert Zero Datetime=True;
+
+
+gz-cdb-ezvn7csl.sql.tencentcdb.com --服务器
+58892 端口
+root 用户名 shengye2021 密码
+bailun_bltpro 数据库
+
+
+--关键单词
+Vat  --增值税
+Tax  --税
+Shipping --运费，地址，国家相关
+Customer --顾客
+
+--typora目录快捷键 ctrl+1,2,3...
+ ctrl+1,2,3  对应一级目录，二级目录，三级目录
+ 
+ --集群
+ 集群通常用来提升速度、可靠性。
+ 高可用性集群：一般是指当集群中有某个节点失效的情况下，其上的任务会自动转移到其他正常的节点上。还指可以将集群中的某节点进行离线维护再上线，该过程并不影响整个集群的运行。
+ 
+（Nginx是负载均衡集群）负载均衡集群：负载均衡集群运行时，一般通过一个或者多个前端负载均衡器，将工作负载分发到后端的一组服务器上，从而达到整个系统的高性能和高可用性。
+
+高性能计算集群：高性能计算集群采用将计算任务分配到集群的不同计算节点而提高计算能力，因而主要应用在科学计算领域。
+
+
+--创建对象的时候，假象它新增了一个对象怎么办？
+这个时候我们的大脑会去思考怎么更好的进行设计？
+
+
+
+--常用对象的解决
+1.this.$refs 
+2.this.$emit('input', val)
+3.this.$message.success('保存成功！')
+4.<template slot-scope="scope">
+
+--电商平台
+Real 德国电商平台
+Fruugo 英国电商平台
+
+--梁泳仪 产品专员
+负责java和爬虫组的需求
+
+--通过git下载代码 Git Bash Here
+git clone http://159.75.212.51:8888/sunway/sunway.admin.web.git  --这是前端代码
+
+
+--gitlab 公司自建代码托管平台
+http://159.75.212.51:8888/    账号：1298775182@qq.com   wr1436062434
+
+--下载Mysql的地址
+https://downloads.mysql.com/archives/community/
+
+--大黄蜂截图的方法
+shift＋win＋S
+
+--公司的wifi信息
+wifi名称：GZSW1 或者 GZSW2020
+
+连接密码：Shengwei888#
+
+验证账号：wangrui
+验证密码：wr@#123456
+
+
+--给label的变量赋值
+$("#jg").text("结果是:" + data);
+
+--基础的html架构
+<html>
+<head>一个案例
+<title>这是一个小例子</title>
+<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
