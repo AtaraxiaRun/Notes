@@ -10575,7 +10575,7 @@ Portainer Docker图形化工具，很给力，扩展阅读：https://www.jianshu
 
 ![1688617776138](Vue进步.assets/1688617776138.png)
 
-### Rancher
+### Rancher：国外用得容器管理
 
 Rancher是一款开源的企业级容器管理平台。它的主要功能和用途包括：
 
@@ -10603,11 +10603,19 @@ docker run -d --restart=unless-stopped -p 8080:8080 rancher/rancher:latest
   
 ```
 
+参考链接：
+
+Rancher是一个开源的企业级全栈化容器部署及管理平台。https://www.cnblogs.com/naixin007/p/11009741.html 
+
+Rancher 使用介绍（可以通过界面管理 K8s 平台） https://blog.csdn.net/weixin_46902396/article/details/122433622
+
+如何在 Kubernetes 中使用 Rancher  https://www.trendmicro.com/en_us/devops/21/b/rancher-and-trend-micro-container-security.html
+
 ### Kubernetes
 
 
 
-### Harbor
+### Harbor：容器管理
 
 Harbor 是一个开源的企业级 Docker Registry 项目，起初是由 VMware 公司开发并开源，后来成为了 CNCF（Cloud Native Computing Foundation，云原生计算基金会）的孵化项目。它主要用于存储、签名、扫描和分发 Docker 镜像。
 
@@ -10735,13 +10743,7 @@ docker pull goharbor/redis-photon:v2.5.2
 
 ```
 
-参考链接：
 
-Rancher是一个开源的企业级全栈化容器部署及管理平台。https://www.cnblogs.com/naixin007/p/11009741.html 
-
-Rancher 使用介绍（可以通过界面管理 K8s 平台） https://blog.csdn.net/weixin_46902396/article/details/122433622
-
-如何在 Kubernetes 中使用 Rancher  https://www.trendmicro.com/en_us/devops/21/b/rancher-and-trend-micro-container-security.html
 
 ### Jenkins
 
