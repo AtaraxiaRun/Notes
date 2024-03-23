@@ -13784,7 +13784,63 @@ select COUNT(distinct PublishedStatus) ,ROUND(count(distinct PublishedStatus)/CO
 [mysql索引优化](https://mp.weixin.qq.com/s/l_pwKrJWdJUs52Vy3I21cw) :对EXPLAN 的进行说明
 [索引优化1](https://mp.weixin.qq.com/s/wWtcFcDbSUIdmu6f3gv9CQ) ：Mysql的存储引擎
 
+#### 用了EXPLAIN优化没有办法，怎么使用Trace工具进一步分析性能瓶颈？
 
+在MySQL中，用于深入分析查询的工具之一是`Optimizer Trace`，它提供了查询优化器是如何选择特定查询执行计划的详细信息。`Optimizer Trace`是MySQL中的一个诊断工具，它为开发者和数据库管理员展示了MySQL优化器是如何工作的，包括选择表的连接顺序、索引选择、查询重写等多个决策点的细节。
+
+**开启 Optimizer Trace**
+
+要使用`Optimizer Trace`，首先需要确保它在你的MySQL实例中被启用。可以通过设置`optimizer_trace`系统变量来开启和配置trace。
+
+1. **开启 Optimizer Trace**
+
+   你可以通过以下SQL命令开启Optimizer Trace：
+
+   ```
+   -- 会话级别， 开启Optimizer Trace
+   SET SESSION optimizer_trace="enabled=on";
+   
+   -- 会话级别，关闭Optimizer Trace
+   SET SESSION optimizer_trace="enabled=off";
+   
+   ```
+
+2. **执行你的查询**
+
+   在开启`Optimizer Trace`之后，执行你想要分析的查询。
+
+   ```
+   SELECT *
+   FROM orders
+   WHERE id > 1000 
+         AND order_date >'2023-01-01'
+         AND total_amount > 100;
+   ```
+
+   
+
+3. **查看 Optimizer Trace 输出**
+
+   查询执行完成后，你可以通过查看`information_schema.optimizer_trace`表来获取优化器的决策过程：
+
+   ```
+   SELECT * FROM information_schema.optimizer_trace  -- 看第二列，Trace列的值
+   ```
+
+   如果执行语句后这一步中Trace列没有结果值，{
+     "steps": [
+     ] /* steps */
+   }，只是这个值，可能是查询太简单了，执行计划都没有复杂的优化器决策。
+
+注意事项
+
+- **对性能的影响**：虽然Optimizer Trace是一个强大的工具，提供了丰富的信息，但是开启它可能会对性能产生影响。因此，最好仅在测试环境或者非高峰时段的生产环境中使用。
+- **临时使用**：通常，你不会在生产环境中永久开启Optimizer Trace。在进行了所需的查询分析后，应该关闭它：
+- **详细程度**：`optimizer_trace`变量提供了一些配置选项，可以调整输出的详细程度。更多关于这些配置的信息可以在MySQL的官方文档中找到。
+
+总结
+
+Optimizer Trace是一个用于分析和理解MySQL查询优化器决策过程的有力工具。通过它，可以获得查询优化的详细洞察，这对于调优查询性能和解决执行计划相关的问题非常有帮助。不过，由于它可能对数据库性能造成影响，建议谨慎使用。
 
 #### 用了EXPLAIN优化没有办法，怎么用SHOW PROFILES进一步分析？
 
