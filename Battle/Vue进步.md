@@ -6123,6 +6123,7 @@ appsettings.json文件中加入数据库配置
 //创建实体类仓储接口
 //问：为什么要在这里继承IRepository<Product>接口呢？ProductRepository仓储类直接继承Repository类不久可以使用Repository仓库里面操作数据库的方法吗
   答：因为ProductContrller控制器中是使用IProductRepository抽象仓储去操作数据库的
+最新情况：Product是定义在Dal层的，IProductRepository是定义在抽象层的，Dal层引用抽象层，抽象层不能引用Dal层（会造成循环引用），所以我在分层架构中产品业务仓储没有继承IRepository<Product>
 public interface IProductRepository : IRepository<Product>
 {
     Product GetProductById(int id);
